@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block title %}New Post{% endblock %}
+{% block content %}
+    <main class="page login-page">
+        <section class="clean-block clean-form dark" style="border-color: #fc758e;">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info" style="color: #fc758e !important;">Create Post<br></h2>
+                    <p></p>
+                </div>
+                <form method="POST" style="border-color: #fc758e;">
+                    <div class="mb-3">
+                        <label class="form-label" for="title">Title</label>
+                        <input class="form-control item" type="text" id="title" name="title"></div>
+                    <div class="mb-3">
+                        <label class="form-label" for="post">Post</label>
+                        <textarea class="form-control" style="padding-bottom: 110px;" id="post" name="post"></textarea></div>
+                    <button class="btn btn-primary" type="submit" style="background: #fc758e;border-color: #fc758e;">POST</button>
+                </form>
+            </div>
+        </section>
+    </main>
+{% endblock %}

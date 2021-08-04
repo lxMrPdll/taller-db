@@ -1,0 +1,54 @@
+<html style="background: #ffffff;">
+</html>
+
+{% extends 'layout.html' %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+
+<div id="content" style="background: #f6f6f6;">
+    <div class="container-fluid">
+        <h3 class="text-dark mb-4">Registered Users</h3>
+        <div class="card shadow" style="background: rgb(255, 255, 255);">
+            <div class="card-header py-3">
+                <p style="color: #fc758e;margin: 0px;font-weight: bold;">Users Info</p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                    <table class="table my-0" id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                            <tr>
+                                <td>{{ user.0 }}</td>
+                                <td>{{ user.1 }}</td>
+                                <td>{{ user.2 }}</td>
+                                <td>
+                                    <a href="/admin/users/update/{{ user.0 }}">Edit</a>
+                                    <a href="/admin/users/delete/{{ user.0 }}">Delete</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><strong>Id</strong></td>
+                                <td><strong>Username</strong></td>
+                                <td><strong>Password</strong></td>
+                                <td><strong>Action</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

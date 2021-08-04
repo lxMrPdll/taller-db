@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block title %}Edit Post{% endblock %}
+{% block content %}
+    <main class="page login-page">
+        <section class="clean-block clean-form dark" style="border-color: #fc758e;">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info" style="color: #fc758e !important;">Edit Post<br></h2>
+                    <p></p>
+                </div>
+                <form method="POST" style="border-color: #fc758e;">
+                    <div class="mb-3">
+                        <label class="form-label" for="title">Title</label>
+                        <input class="form-control item" type="text" id="title" name="title" value="{{ post.1 }}"></div>
+                    <div class="mb-3">
+                        <label class="form-label" for="post">Post</label>
+                        <textarea class="form-control" style="padding-bottom: 110px;" id="post" name="post">{{ post.2 }}</textarea></div>
+                    <button class="btn btn-primary" type="submit" style="background: #fc758e;border-color: #fc758e;">Save</button>
+                    <a class="btn btn-primary" type="submit" style="background: #fc758e;border-color: #fc758e;" onclick="return confirm('Are you sure?');" href="/post/{{ post.0 }}/delete">Delete</a>
+                </form>
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<!--block content-->
+<main class="page blog-post-list">
+    <section class="clean-block clean-blog-list dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info" style="color: #fc758e !important;">Blog Post List</h2>
+                <p></p>
+            </div>
+            <!--posts-->
+            <div class="block-content">
+                {% for post in posts %}
+                <div class="clean-blog-post">
+                    <div class="row">
+                        <div class="col">
+                            <h3><strong>{{ post.1 }}</strong><br></h3>
+                            <div class="info"><span class="text-muted">{{ post.3 }} by&nbsp;<a href="#">{{ post.5 }}</a></span></div>
+                            <p>{{ post.2 }}</p>
+                            {% if g.user.0 == post.4 %}
+                            <a class="btn btn-primary" type="submit" style="background: #fc758e;border-color: #fc758e;" href="/post/{{ post.0 }}/update">Edit</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!--endposts-->
+        </div>
+    </section>
+</main>
+<!--endblock-->
+{% endblock %}
